@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.forBack:hover {
+    background-color: #cccc;
+    border-radius: 5px;
+
+}
+
+#hero {
+
+    background-image: url("./assets/images/architect.jpg");
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar {
+    letter-spacing: 4px;
+
+}
+
+#navbar,
+#nav_br,
+#footer>h1 {
+    font-size: 15px;
+}
+
+@media (min-width: 992px) {
+
+    .project-image,
+    .card-image,
+    #pro_name {
+        transition: transform 0.5s;
+    }
+
+    .project-image:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    .project-image:hover+#pro_name {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    .card-image:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    #hero{
+
+        background-image: url("./assets/images/architect.jpg");
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+    }
+}

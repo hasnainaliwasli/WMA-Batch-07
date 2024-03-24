@@ -1,0 +1,41 @@
+.secH{
+
+border-top: 1px solid rgb(0, 0, 0);
+border-bottom: 1px solid rgb(0, 0, 0);
+border-left: 2px outset rgb(46, 45, 45);
+border-right: 2px inset rgb(56, 55, 55);
+
+}
+
+.span1 {
+    border: 2px solid rgb(0, 0, 0);
+}
+.span2 {
+    border: 2px solid rgb(218, 1, 1);
+}
+
+.imgDiv{
+    display: flex;
+    justify-content: center;
+    margin: 0px 20% 0px 20%;
+}
+
+img{
+    padding: 2px;
+}
+
+footer{
+
+    text-align: center;
+}
+
+table{
+    display: flex;
+    border:2px inset rgb(46, 45, 45);
+    justify-content: center;
+    margin: auto 28.2%;
+}
+th{
+    border:1px inset rgb(46, 45, 45);
+    padding: 4.5px;
+}

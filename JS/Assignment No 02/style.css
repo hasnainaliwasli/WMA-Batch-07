@@ -1,0 +1,13 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+main{
+    height: 100vh;
+}
+.top_btn>button{
+    background-color: red !important;
+}
