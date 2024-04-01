@@ -1,17 +1,7 @@
 .top_btn>button{
     background-color: red !important;
 }
+.output_box{
 
-
-.row_first{
-    height: 30px;
-}
-
-#input{
-
-    
-}
-
-.btnClr{
-    border-radius: 20;
+    min-height: 176px;
 }
