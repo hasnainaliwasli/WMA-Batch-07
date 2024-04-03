@@ -105,12 +105,12 @@ function checkCity() {
         for (i = 0; i < allCities.length; i++) {
             let lowerCity = allCities[i].toLowerCase();
             if (city == lowerCity) {
-                document.getElementById("output").innerHTML = `City<span style="font-size:20px; color:blue">(${city}) </span> Founded in the list. <br><br> <button type="button" class="btn btn-danger mb-2 " onclick=toPrintAll() >SEE FULL LIST</button>`
+                document.getElementById("output").innerHTML = `<span style="font-size:20px;color:green">FOUND!</span> <br>City<span style="font-size:20px; color:blue">(${city}) </span> Founded in the list. <br><br> <button type="button" class="btn btn-danger mb-2 " onclick=toPrintAll() >SEE FULL LIST</button>`
                 return
             }
 
         }
-        document.getElementById("output").innerHTML = `City(${city}) Not Found in the list`
+        document.getElementById("output").innerHTML = `<span style="font-size:20px;color:red">NOT FOUND!</span> <br>City <span style="font-size:20px; color:blue">(${city})</span> Not Found in the list <br><br> <button type="button" class="btn btn-danger mb-2 " onclick=toPrintAll() >SEE FULL LIST</button>`
     }
 
     console.log(result);
@@ -118,7 +118,10 @@ function checkCity() {
 }
 
 // Original String
-
+function originalString(){
+    let originalStr = document.getElementById("originalString").innerText;
+    document.getElementById('output').innerText =originalStr 
+}
 // 8.Find the word
 
 function findWord() {
@@ -141,7 +144,7 @@ function findWord() {
                 return
             }
             else {
-                document.getElementById("output").innerHTML = `<span style="font-size:20px;color:red">NOT FOUND!</span> <br>Your word "<span style="font-size:20px;color:blue">${findWord}</span>" is not in the Original String. <button type="button" class="btn btn-danger mb-2 " onclick=originalString() >SEE ORIGINAL STRING</button>`;
+                document.getElementById("output").innerHTML = `<span style="font-size:20px;color:red">NOT FOUND!</span> <br>Your word "<span style="font-size:20px;color:blue">${findWord}</span>" is not in the Original String. <button type="button" class="btn btn-danger mt-2" style="width:50%" onclick=originalString() >SEE ORIGINAL STRING</button>`;
             }
         }
     }
