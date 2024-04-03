@@ -54,8 +54,18 @@ function toCapital() {
 
 function toBetter() {
 
-}
+    let inputValue = document.getElementById("input").value;
+    let lowerValue = inputValue.toLowerCase();
 
+    if (!inputValue) {
+        alert("Please type your text in INPUT Field")
+    }
+    else {
+        document.getElementById("output").innerHTML = lowerValue;
+        document.getElementById("output").style.textTransform = "capitalize"
+        document.getElementById("input").value = ''
+    }
+}
 
 
 
@@ -107,14 +117,15 @@ function checkCity() {
             let lowerCity = allCities[i].toLowerCase();
             if (city == lowerCity) {
                 document.getElementById("output").innerHTML = `<span style="font-size:20px;color:green">FOUND!</span> <br>City<span style="font-size:20px; color:blue">(${city}) </span> Founded in the list. <br><br> <button type="button" class="btn btn-danger mb-2 " onclick=toPrintAll() >SEE FULL LIST</button>`
+                document.getElementById("input").value = '';
                 return
             }
 
         }
         document.getElementById("output").innerHTML = `<span style="font-size:20px;color:red">NOT FOUND!</span> <br>City <span style="font-size:20px; color:blue">(${city})</span> Not Found in the list <br><br> <button type="button" class="btn btn-danger mb-2 " onclick=toPrintAll() >SEE FULL LIST</button>`
+        document.getElementById("input").value = ''
     }
 
-    console.log(result);
 
 }
 
