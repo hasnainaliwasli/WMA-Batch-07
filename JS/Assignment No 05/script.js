@@ -83,7 +83,7 @@ function addCity() {
     }
     else {
         allCities.push(inputValue)
-        document.getElementById("output").innerHTML = `<span style="font-size:20px;color:blue">"${inputValue}"</span>  is Added in Cities list. <br><br><button type="button" class="btn btn-danger mb-2 " onclick=toPrintAll() >SEE FULL LIST</button>`
+        document.getElementById("output").innerHTML = `<span style="font-size:20px;color:green">ADDED!</span> <br><span style="font-size:20px;color:blue">"${inputValue}"</span>  is Added in Cities list. <br><br><button type="button" class="btn btn-danger mb-2 " onclick=toPrintAll() >SEE FULL LIST</button>`
         document.getElementById("input").value = '';
     }
 }
@@ -117,12 +117,34 @@ function checkCity() {
 
 }
 
-
+// Original String
 
 // 8.Find the word
 
 function findWord() {
 
+    document.getElementById("output").innerText = ''
+
+    let text = document.getElementById("originalString").innerText;
+
+    let words = text.split(/\s+|[,;.!]+/);
+
+    let findWord = document.getElementById("input").value;
+    if (!findWord) {
+        alert("Please type the word you want to Find")
+    }
+    else {
+        for (i = 0; i < words.length; i++) {
+            if (words[i] == findWord) {
+                let indexFound = words.indexOf(words[i]);
+                document.getElementById("output").innerHTML = `<span style="font-size:20px;color:green">FOUND!</span> <br>Your word "<span style="font-size:20px;color:blue">${findWord}</span>" is on index <span style="font-size:20px;color:blue">${indexFound}</span>`;
+                return
+            }
+            else {
+                document.getElementById("output").innerHTML = `<span style="font-size:20px;color:red">NOT FOUND!</span> <br>Your word "<span style="font-size:20px;color:blue">${findWord}</span>" is not in the Original String. <button type="button" class="btn btn-danger mb-2 " onclick=originalString() >SEE ORIGINAL STRING</button>`;
+            }
+        }
+    }
 }
 
 
