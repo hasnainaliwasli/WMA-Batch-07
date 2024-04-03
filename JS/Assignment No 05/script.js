@@ -91,7 +91,7 @@ function addCity() {
 
 
 
-// Check Your City in List
+// 7.Check Your City in List
 
 function checkCity() {
     let inputValue = document.getElementById("input").value;
@@ -114,5 +114,33 @@ function checkCity() {
     }
 
     console.log(result);
+
+}
+
+
+
+// 8.Find the word
+
+function findWord() {
+
+}
+
+
+
+//  9.Replace this word
+
+function replaceWord() {
+    let statement = document.getElementById("originalString").innerText;
+
+    let replaceThis = document.getElementById("input").value;
+    if (!replaceThis) {
+        alert("Please insert the word you want to replace")
+    }
+    else {
+        let replaceWith = prompt("Enter word with you want to replace in Input Field: ");
+        document.getElementById("output").innerText = statement.replaceAll(replaceThis, replaceWith)
+    }
+
+    document.getElementById("input").value = '';
 
 }
