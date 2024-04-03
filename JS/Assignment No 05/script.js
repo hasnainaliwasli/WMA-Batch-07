@@ -60,8 +60,9 @@ function toBetter() {
 
 
 // 5.Print All Cities
-let allCities = []
+let allCities = ["FSD", "swl"]
 function toPrintAll() {
+
     if (!allCities[0]) {
         alert("Your list of cities is empty. Please add a city to print.");
     } else {
@@ -118,9 +119,9 @@ function checkCity() {
 }
 
 // Original String
-function originalString(){
+function originalString() {
     let originalStr = document.getElementById("originalString").innerText;
-    document.getElementById('output').innerText =originalStr 
+    document.getElementById('output').innerText = originalStr
 }
 // 8.Find the word
 
@@ -144,7 +145,7 @@ function findWord() {
                 return
             }
             else {
-                document.getElementById("output").innerHTML = `<span style="font-size:20px;color:red">NOT FOUND!</span> <br>Your word "<span style="font-size:20px;color:blue">${findWord}</span>" is not in the Original String. <button type="button" class="btn btn-danger mt-2" style="width:50%" onclick=originalString() >SEE ORIGINAL STRING</button>`;
+                document.getElementById("output").innerHTML = `<span style="font-size:20px;color:red">NOT FOUND!</span> <br>Your word "<span style="font-size:20px;color:blue">${findWord}</span>" is not in the Original String. <button type="button" class="btn btn-danger mt-2" style="width:50% ; white-space:nowrap" onclick=originalString() >SEE ORIGINAL STRING</button>`;
             }
         }
     }
@@ -159,13 +160,25 @@ function replaceWord() {
 
     let replaceThis = document.getElementById("input").value;
     if (!replaceThis) {
-        alert("Please insert the word you want to replace")
+        alert("Please Enter the word you want to replace in the Input Field")
+        return;
     }
     else {
-        let replaceWith = prompt("Enter word with you want to replace in Input Field: ");
+        let replaceWith = prompt(`Enter word you want to write in place of " ${replaceThis} "`);
         document.getElementById("output").innerText = statement.replaceAll(replaceThis, replaceWith)
     }
 
     document.getElementById("input").value = '';
 
+}
+
+
+// Clear Input Button
+document.getElementById("firstClrBtn").onclick = () => {
+    document.getElementById("input").value = "";
+}
+
+//  Clear Output Button
+clrOutput = () => {
+    document.getElementById("output").innerHTML = "";
 }

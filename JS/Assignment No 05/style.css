@@ -1,10 +1,10 @@
-.btn {
+.allBtns {
     width: calc(55% - 48px);
     white-space: nowrap;
 }
 
 @media only screen and (max-width: 600px) {
-    .btn {
+    .allBtns {
         width: 100%;
         padding-top: 10px;
         padding-bottom: 10px;
