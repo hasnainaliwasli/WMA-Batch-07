@@ -1,0 +1,27 @@
+.btn {
+    width: calc(55% - 48px);
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 600px) {
+    .btn {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+.firstClrBtn:hover {
+    background-color: #1d3557;
+    color: white;
+    border: 1px solid #1d3557;
+}
+
+.firstClrBtn:active {
+    background-color: #162438;
+    color: white;
+}
+
+.output {
+    min-height: 280px;
+}
