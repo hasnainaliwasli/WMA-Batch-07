@@ -207,3 +207,5 @@ document.getElementById("firstClrBtn").onclick = () => {
 clrOutput = () => {
     document.getElementById("output").innerHTML = "";
 }
+
+console.log("Hello");
