@@ -6,6 +6,7 @@ function toLower() {
     let inputValue = document.getElementById("input").value
     if (!inputValue) {
         alert("Please Type The Text In Input To Convert to Lowercase")
+        document.getElementById("output").innerHTML = ''
     }
     else {
         document.getElementById("output").innerHTML = "";
@@ -23,6 +24,7 @@ function toUpper() {
     let inputValue = document.getElementById("input").value;
     if (!inputValue) {
         alert("Please Type The Text In Input To Convert to Uppercase")
+        document.getElementById("output").innerHTML = ''
     }
     else {
         document.getElementById("output").innerHTML = "";
@@ -41,6 +43,7 @@ function toCapital() {
     let inputValue = document.getElementById("input").value;
     if (!inputValue) {
         alert("Please type the text in input to convert to capitalize");
+        document.getElementById("output").innerHTML = ''
     } else {
         document.getElementById('output').innerText = inputValue;
         document.getElementById("output").style.textTransform = "capitalize";
@@ -59,6 +62,7 @@ function toBetter() {
 
     if (!inputValue) {
         alert("Please type your text in INPUT Field")
+        document.getElementById("output").innerHTML = ''
     }
     else {
         document.getElementById("output").innerHTML = lowerValue;
@@ -75,6 +79,7 @@ function toPrintAll() {
 
     if (!allCities[0]) {
         alert("Your list of cities is empty. Please add a city to print.");
+        document.getElementById("output").innerHTML = ''
     } else {
         let output = "";
         for (let i = 0; i < allCities.length; i++) {
@@ -91,6 +96,7 @@ function addCity() {
     let inputValue = document.getElementById("input").value;
     if (!inputValue) {
         alert("Please type the City Name in input Field to Add City");
+        document.getElementById("output").innerHTML = ''
     }
     else {
         allCities.push(inputValue)
@@ -109,6 +115,7 @@ function checkCity() {
     let result = ''
     if (!inputValue) {
         alert("Please type the City Name in input Field to Check City");
+        document.getElementById("output").innerHTML = ''
     }
     else if (inputValue) {
         let city = inputValue.toLowerCase();
@@ -147,6 +154,7 @@ function findWord() {
     let findWord = document.getElementById("input").value;
     if (!findWord) {
         alert("Please type the word you want to Find")
+        document.getElementById("output").innerHTML = ''
     }
     else {
         findWord = findWord.toLowerCase();
@@ -177,6 +185,7 @@ function replaceWord() {
     let replaceThis = document.getElementById("input").value;
     if (!replaceThis) {
         alert("Please Enter the word you want to replace in the Input Field")
+        document.getElementById("output").innerHTML = ''
         return;
     }
     else {
