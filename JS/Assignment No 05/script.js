@@ -149,14 +149,19 @@ function findWord() {
         alert("Please type the word you want to Find")
     }
     else {
+        findWord = findWord.toLowerCase();
         for (i = 0; i < words.length; i++) {
+            words[i] = words[i].toLowerCase();
             if (words[i] == findWord) {
                 let indexFound = words.indexOf(words[i]);
                 document.getElementById("output").innerHTML = `<span style="font-size:20px;color:green">FOUND!</span> <br>Your word "<span style="font-size:20px;color:blue">${findWord}</span>" is on index <span style="font-size:20px;color:blue">${indexFound}</span>`;
+                document.getElementById("input").value = ''
                 return
             }
             else {
                 document.getElementById("output").innerHTML = `<span style="font-size:20px;color:red">NOT FOUND!</span> <br>Your word "<span style="font-size:20px;color:blue">${findWord}</span>" is not in the Original String. <button type="button" class="btn btn-danger mt-2" style="width:50% ; white-space:nowrap" onclick=originalString() >SEE ORIGINAL STRING</button>`;
+                document.getElementById("input").value = ''
+
             }
         }
     }
