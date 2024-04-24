@@ -57,13 +57,20 @@ function dice() {
 
 // 6.Generate a Strong Password
 function strongPass() {
-    let alphabet = 'qwertyuiopasdfghjklzxcvbnm'
-    let capital = 'QWERTYUIOPASDFGHJKLZXCVBNM'
-    let randomNum = Math.random(); //Math.random function is used to generate a random number
-    output.innerHTML = `Random Number  = ${randomNum}`
+    let length = document.getElementById('inputBox')
+    var password = generatePassword(length.value);
+    function generatePassword(length) {
+        let charSet = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890~!@#$%^&*()_+=-[]\|}{;:,./?><"
+        let password = "";
+        for (i = 0; i < length; i++) {
+            let index = Math.floor(Math.random() * charSet.length)
+            password += charSet[index]
+        }
+        return password
+    }
+    console.log(password);
+    output.innerHTML = password;
     original.innerHTML = 'Generate Random Number';
-    input.value = ''
-
 }
 
 
@@ -72,12 +79,9 @@ function convertString() {
 
     let input = document.getElementById('inputBox');
     let convertedNum = parseInt(input.value);
-    let convertedNum2 = Number(input.value);
+    let convertedNum2 = Number(input.value); //This method also used to convert the String to Number
     output.innerHTML = ` Number  = ${convertedNum}`
-    original.innerHTML = input.value;
-
-    console.log("input ", input.value);
-    console.log('converted', convertedNum2);
+    original.innerHTML = `String =  ${input.value}`;
     input.value = ''
 
 }
@@ -86,12 +90,21 @@ function convertString() {
 // 8.Controll the Lenght
 function controlLength() {
 
-
+    let input = Number(document.getElementById('inputBox').value)
+    let length = prompt("Enter the Length: ");
+    output.innerHTML = `Fixed to ${length} = ${input.toFixed(length)}`
+    original.innerHTML = `Original Number =  ${input}`;
 }
 
 
 // 9.Calculate the GST
 function gst() {
-
-
+    let price = prompt('Enter the Price: ')
+    let gstRate = prompt('Enter the gstRate: ')
+    function gst(price, gstRate) {
+        let gstTax = (price * gstRate) / 100
+        return gstTax;
+    }
+    let calculatedGst = gst(price, gstRate)
+    output.innerHTML = calculatedGst
 }
