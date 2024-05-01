@@ -1,3 +1,6 @@
+
+// Some value to get 
+
 let output = document.getElementById('output')
 let original = document.getElementById('original')
 
