@@ -4,13 +4,32 @@
 let output = document.getElementById('output')
 let original = document.getElementById('original')
 
+// Tostify Code function
+
+function toast(msg) {
+    Toastify({
+        text: msg,
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
+}
+
 
 // 1.Round a Number
 
 function roundNum() {
     let input = document.getElementById('inputBox');
     if (input.value == '') {
-        alert("Please Enter the Number in the input Field")
+        toast("Please Enter the Number in the input Field")
     }
     else {
         let roundedNum = Number(Math.round(input.value)); //Math.round function is used to round a number
@@ -27,7 +46,7 @@ function ceil() {
 
     let input = document.getElementById('inputBox');
     if (input.value == '') {
-        alert("Please Enter the Number in the input Field")
+        toast("Please Enter the Number in the input Field")
     }
     else {
         let ceiledNum = Number(Math.ceil(input.value)); //Math.ceil function is used to Ceil a number
@@ -44,7 +63,7 @@ function floor() {
 
     let input = document.getElementById('inputBox');
     if (input.value == '') {
-        alert("Please Enter the Number in the input Field")
+        toast("Please Enter the Number in the input Field")
     }
     else {
         let floredNum = Number(Math.floor(input.value)); //Math.floor function is used to Floor a number
@@ -77,7 +96,7 @@ function dice() {
 function strongPass() {
     let length = document.getElementById('inputBox')
     if (length.value == '') {
-        alert("Please Enter the length in the input Field")
+        toast("Please Enter the length in the input Field")
     }
     else {
         var password = generatePassword(length.value);
@@ -102,7 +121,7 @@ function convertString() {
 
     let input = document.getElementById('inputBox');
     if (input.value == '') {
-        alert("Please Enter the Number in the input Field")
+        toast("Please Enter the Number in the input Field")
     }
     else {
         let convertedNum = parseInt(input.value);
@@ -120,7 +139,7 @@ function controlLength() {
 
     let input = Number(document.getElementById('inputBox').value)
     if (input == '') {
-        alert("Please Enter the Float Number in the input Field")
+        toast("Please Enter the Float Number in the input Field")
     }
     else {
         let length = prompt("Enter the Length: ");
@@ -146,6 +165,6 @@ function gst() {
 // Clear Button
 
 function clr() {
-    document.getElementById('inputBox').value = ''
+    document.getElementById('inputBox').value = '';
 }
 
