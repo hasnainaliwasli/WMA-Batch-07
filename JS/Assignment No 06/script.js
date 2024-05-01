@@ -6,8 +6,13 @@ let original = document.getElementById('original')
 
 function roundNum() {
     let input = document.getElementById('inputBox');
-    let roundedNum = Number(Math.round(input.value)); //Math.round function is used to round a number
-    output.innerHTML = `Rounded Number  = ${roundedNum}`
+    if (input.value == '') {
+        alert("Please Enter the Number in the input Field")
+    }
+    else {
+        let roundedNum = Number(Math.round(input.value)); //Math.round function is used to round a number
+        output.innerHTML = `Rounded Number  = ${roundedNum}`
+    }
     original.innerHTML = input.value;
     input.value = ''
 }
@@ -18,8 +23,13 @@ function roundNum() {
 function ceil() {
 
     let input = document.getElementById('inputBox');
-    let ceiledNum = Number(Math.ceil(input.value)); //Math.ceil function is used to Ceil a number
-    output.innerHTML = `Ceiled Number  = ${ceiledNum}`
+    if (input.value == '') {
+        alert("Please Enter the Number in the input Field")
+    }
+    else {
+        let ceiledNum = Number(Math.ceil(input.value)); //Math.ceil function is used to Ceil a number
+        output.innerHTML = `Ceiled Number  = ${ceiledNum}`
+    }
     original.innerHTML = input.value;
     input.value = ''
 
@@ -30,8 +40,13 @@ function ceil() {
 function floor() {
 
     let input = document.getElementById('inputBox');
-    let floredNum = Number(Math.floor(input.value)); //Math.floor function is used to Floor a number
-    output.innerHTML = `Flored Number  = ${floredNum}`
+    if (input.value == '') {
+        alert("Please Enter the Number in the input Field")
+    }
+    else {
+        let floredNum = Number(Math.floor(input.value)); //Math.floor function is used to Floor a number
+        output.innerHTML = `Flored Number  = ${floredNum}`
+    }
     original.innerHTML = input.value;
     input.value = ''
 }
@@ -58,7 +73,12 @@ function dice() {
 // 6.Generate a Strong Password
 function strongPass() {
     let length = document.getElementById('inputBox')
-    var password = generatePassword(length.value);
+    if (length.value == '') {
+        alert("Please Enter the length in the input Field")
+    }
+    else {
+        var password = generatePassword(length.value);
+    }
     function generatePassword(length) {
         let charSet = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890~!@#$%^&*()_+=-[]\|}{;:,./?><"
         let password = "";
@@ -78,9 +98,14 @@ function strongPass() {
 function convertString() {
 
     let input = document.getElementById('inputBox');
-    let convertedNum = parseInt(input.value);
-    let convertedNum2 = Number(input.value); //This method also used to convert the String to Number
-    output.innerHTML = ` Number  = ${convertedNum}`
+    if (input.value == '') {
+        alert("Please Enter the Number in the input Field")
+    }
+    else {
+        let convertedNum = parseInt(input.value);
+        let convertedNum2 = Number(input.value); //This method also used to convert the String to Number
+        output.innerHTML = ` Number  = ${convertedNum}`
+    }
     original.innerHTML = `String =  ${input.value}`;
     input.value = ''
 
@@ -91,8 +116,13 @@ function convertString() {
 function controlLength() {
 
     let input = Number(document.getElementById('inputBox').value)
-    let length = prompt("Enter the Length: ");
-    output.innerHTML = `Fixed to ${length} = ${input.toFixed(length)}`
+    if (input == '') {
+        alert("Please Enter the Float Number in the input Field")
+    }
+    else {
+        let length = prompt("Enter the Length: ");
+        output.innerHTML = `Fixed to ${length} = ${input.toFixed(length)}`
+    }
     original.innerHTML = `Original Number =  ${input}`;
 }
 
@@ -108,3 +138,11 @@ function gst() {
     let calculatedGst = gst(price, gstRate)
     output.innerHTML = calculatedGst
 }
+
+
+// Clear Button
+
+function clr() {
+    document.getElementById('inputBox').value = ''
+}
+
