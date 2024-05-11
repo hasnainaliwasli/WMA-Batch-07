@@ -199,3 +199,10 @@ function total() {
 
     outputValue(`Total : ${total} `)
 }
+
+
+// Clear button 
+
+function clr() {
+    document.getElementById('inputBox').value= ''
+}
