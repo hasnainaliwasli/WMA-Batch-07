@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignment No 07</title>
+
+    <!-- Tostify CSS Link -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!-- Bootstrap CSS Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header Section -->
+
+    <header>
+
+        <!-- Navbar -->
+
+        <nav class="navbar navbar-expand-lg " style="background-color: #1d3557 ;">
+            <div class="container">
+                <a class="navbar-brand text-white" href="#">Assignments</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Chapter 26 - 30</a>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Main Section -->
+
+    <main class="container">
+
+        <h4 class="text-center mt-5 mb-3">Chapter # 26 - 30 | Numbers, Integers & Decimals</h4>
+        <hr>
+
+
+        <!-- Input and Original Statement -->
+
+        <div class="row ">
+            <div class="row">
+                <!-- 1st Columns -->
+                <div class="col-lg-6 col-12">
+                    <h3 class="text-center mt-3">Input</h3>
+                    <div class="input-group rounded mb-3 border border-2 p-4">
+                        <input type="text" class="form-control" placeholder="Type your text here"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2" id="inputBox">
+                        <span class="input-group-text " id="basic-addon2 " style="cursor: pointer;"
+                            onclick=clr()>Clear</span>
+                    </div>
+
+                </div>
+
+                <!-- 2nd Column -->
+                <div class="col-lg-6 col-12">
+                    <h3 class="text-center mt-3">Original Statement</h3>
+                    <div class="border border-2 rounded text-white text-center pt-3 fs-2"
+                        style="height:90px ; background-color: #1d3557 ;" id="original">
+                        ---------
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Buttons and Output -->
+
+        <div class="row">
+            <!-- buttons -->
+
+            <!-- must -->
+
+
+            <div class=" mb-5 col-lg-6 col-12">
+                <h3 class="text-center mt-5">Buttons</h3>
+                <div class="container col-12 border border-2 py-4 px-2 text-center rounded">
+                    <button type="button" class="btn allBtns btn-danger mb-2 " onclick=today()>
+                        Get Name of Today</button>
+                    <button type="button" class="btn allBtns btn-danger mb-2 " onclick=daysPass()>Tell Days Passed
+                        since I born</button>
+                    <button type="button" class="btn allBtns btn-danger mb-2 " onclick=nextHBD()>When is your next
+                        Birthday?</button>
+                    <button type="button" class="btn allBtns btn-danger mb-2 " onclick=greet()>Greet User</button>
+                    <button type="button" class="btn allBtns btn-danger mb-2 " onclick=telltime1()>Tell Time 1</button>
+                    <button type="button" class="btn allBtns btn-danger mb-2 " onclick=telltime1() >Tell Time 2</button>
+                    <button type="button" class="btn allBtns btn-danger mb-2 " onclick=telltime1() >Tell Time
+                        3</button>
+                    <button type="button" class="btn allBtns btn-danger mb-2 " onclick=tax()>Calculate Tax
+                    </button>
+                    <button type="button" class="btn allBtns btn-danger mb-2 " onclick=total()>Calculate Total = Price +
+                        Tax
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- output -->
+
+            <div class="col-lg-6 col-12">
+                <div class="col-12">
+                    <h3 class="text-center mt-5">Output / Result</h3>
+                    <div class="border border-2 rounded text-center p-4 fs-4" style="height: 279px;" id="output">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+    </main>
+
+
+    <!-- Footer Contents -->
+
+    <footer class="mt-0">
+        <nav class=" text-center " style="background-color: #1d3557 ;">
+            <div class="container">
+                <p class="text-white text-center p-3 mb-0">&copy; All Rights Reserved by Hasnain Ali</p>
+            </div>
+        </nav>
+
+    </footer>
+
+
+
+    <!-- Tostify Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Js Script -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
