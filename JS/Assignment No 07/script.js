@@ -206,3 +206,6 @@ function total() {
 function clr() {
     document.getElementById('inputBox').value= ''
 }
+function clr() {
+    document.getElementById('output').innerHTML= ''
+}
