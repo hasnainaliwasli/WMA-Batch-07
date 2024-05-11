@@ -24,7 +24,7 @@ function outputValue(output) {
 // Input Value
 function inputValue() {
     let inputBox = document.getElementById('inputBox')
-    return inputBox.value
+    return Number(inputBox.value)
 }
 
 // Original Statement
@@ -154,4 +154,48 @@ function telltime1() {
 }
 
 
-//
+// 5.Calculate Tax
+
+function tax() {
+    let price = inputValue()
+
+    if (!inputValue()) {
+        toast('Please Enter price in Input Field')
+        return;
+    }
+
+    let percentage = prompt('Please Enter Percentage of Tax: ');
+
+    // now we need to convert the Value from percentage to Decimal Value
+    let decimal = percentage / 100
+
+    let tax = Math.round(price * decimal)
+
+    original(`Price : ${price} , Tax Ratio : ${percentage}%`)
+
+    outputValue(`Tax on ${price} = ${tax} Rupees`)
+}
+
+
+// 6.Calculate Total 
+
+function total() {
+    let price = inputValue()
+
+    if (!inputValue()) {
+        toast('Please Enter price in Input Field')
+        return;
+    }
+
+    let percentage = prompt('Please Enter Percentage of Tax: ');
+
+    // now we need to convert the Value from percentage to Decimal Value
+    let decimal = percentage / 100
+
+    let tax = Math.round(price * decimal)
+    original(`Price : ${price} , Tax Ratio : ${percentage}%`)
+
+    let total = price + tax;
+
+    outputValue(`Total : ${total} `)
+}
