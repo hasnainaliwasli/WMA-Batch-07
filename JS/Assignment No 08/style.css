@@ -1,0 +1,13 @@
+main {
+
+    height: calc(100vh - 160px);
+}
+
+#btn {
+    width: 49%;
+    margin-bottom: 8px;
+}
+
+.outputBox {
+    height: 120px;
+}

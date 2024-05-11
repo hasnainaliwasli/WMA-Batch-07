@@ -16,58 +16,69 @@
 <body>
 
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg " style="background-color: #1d3557 ;">
-        <div class="container">
-            <a class="navbar-brand text-white" href="#">Assignments</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="#">Chapter 39 - 42</a>
-                    </li>
-                </ul>
-
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-
-    <!-- Main Section -->
-    <main class="container">
-
-        <h4 class="text-center mt-5 mb-3">Chapter # 39 - 42 | Numbers, Integers & Decimals</h4>
-        <hr>
-
-
-
-        
-
-
-
-
-    </main>
-
-
-
-
-    <!-- Footer -->
-    <footer class="mt-0">
-        <nav class=" text-center " style="background-color: #1d3557 ;">
+    <div class="allContainer">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg " style="background-color: #1d3557 ;">
             <div class="container">
-                <p class="text-white text-center p-3 mb-0">&copy; All Rights Reserved by Hasnain Ali</p>
+                <a class="navbar-brand text-white" href="#">Assignments</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Chapter 39 - 42</a>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
         </nav>
 
-    </footer>
+
+        <!-- Main Section -->
+        <main class="container">
+
+            <h4 class="text-center mt-5 mb-3">Chapter # 39 - 42 | Numbers, Integers & Decimals</h4>
+            <hr>
+
+            <div class="row">
+                <div class="col">
+                    <h3 class="text-center">Buttons</h3>
+                    <div class="buttons border border-2 p-3 text-center">
+                        <button type="button" class="btn btn-danger" id="btn" onclick="ifElse()">If-Else</button>
+                        <button type="button" class="btn btn-danger" id="btn" onclick="swich()">Switch</button>
+                        <button type="button" class="btn btn-danger mb-0" id="btn" onclick='name()'>Keep Asking the
+                            Name</button>
+                    </div>
+
+                </div>
+                <div class="col text-center">
+                    <h3 class="text-center">Output</h3>
+                    <div class="outputBox border border-2">
+                    </div>
+                    <button type="button" class="btn btn-outline-secondary mt-3" onclick="clr()">Clear Output</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mb-0">
+            <nav class=" text-center " style="background-color: #1d3557 ;">
+                <div class="container">
+                    <p class="text-white text-center p-3 mb-0">&copy; All Rights Reserved by Hasnain Ali</p>
+                </div>
+            </nav>
+
+        </footer>
+
+    </div>
 
     <!-- Bootstrap Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
