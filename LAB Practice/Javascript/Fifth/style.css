@@ -99,6 +99,12 @@ table {
 
 @media only screen and (max-width: 600px) {
    table{
-   
+   font-size: 15px;
    }
+   th,
+td {
+    /* padding-left: 30px; */
+    padding: 10px;
+    padding-top: 0px;
+}
   }
