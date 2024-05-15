@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #6fd5e2;
+
+}
+
+#firstname,
+#lastname,
+#email,
+#dob {
+    padding: 8px;
+    width: 500px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    background-color: rgb(105, 41, 41);
+    color: white;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+input::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    /* Firefox */
+    font-size: 13px;
+    font-weight: 200;
+}
+
+
+#submit,
+#btn {
+    width: 110px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    font-family: sans-serif;
+    margin-top: 10px;
+
+}
+
+#submit:hover,
+#btn:hover {
+    background-color: rgb(105, 41, 41);
+    color: white;
+
+}
+
+#submit:active,
+#btn:active {
+
+    background-color: rgb(41, 104, 105);
+    color: white;
+
+}
+
+.output {
+    background-color: rgb(105, 41, 41);
+    height: 100%;
+    width: 100%;
+}
+
+#outputH1 {
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    text-decoration: underline;
+    font-size: 40px;
+}
+
+th,
+td {
+    /* padding-left: 30px; */
+    padding: 20px;
+    padding-top: 0px;
+}
+
+table {
+    color: wheat;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
