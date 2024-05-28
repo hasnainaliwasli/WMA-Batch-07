@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="bodyContent">
+
+        <form action="" onsubmit="signUp()">
+            <label for="userName">User Name</label>
+            <input type="text" name="" id="userName">
+
+            <label for="email">Email</label>
+            <input type="text" name="" id="email">
+
+            <label for="password">Password</label>
+            <input type="text" name="" id="password">
+
+            <input type="submit" name="" id="addUser" onclick="signUp()" value="SignUp">
+        </form>
+        <button onclick="signIn()"> Sign In</button>
+        <button onclick="showUser()"> Show Users</button>
+
+    </div>
+
+
+    <script src="./script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>
