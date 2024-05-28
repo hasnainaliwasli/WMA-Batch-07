@@ -34,19 +34,23 @@ function toast(msg, clr) {
 }
 
 // let users = JSON.parse(localStorage.getItem("users")) || [];
-let users = JSON.stringify(localStorage.getItem("users"))
+let users = JSON.parse(localStorage.getItem("users")) || []
 function signUp() {
     event.preventDefault()
     userName = inputValue("userName").trim()
     email = inputValue("email")
     password = inputValue("password")
 
-    log
 
     if (!userName || !email || !password) {
         toast("please fill the input fields", "error")
         return
     }
+
+    if (!Array.isArray(users)) {
+        users = [];
+    }
+
     let isUserFound = users.find(user => {
         return user.email == email && user.password == password
     })
@@ -66,6 +70,7 @@ function signUp() {
         password: password
     }
     users.push(user)
+
     let allUsers = JSON.stringify(users)
     localStorage.setItem("users", allUsers)
 }
