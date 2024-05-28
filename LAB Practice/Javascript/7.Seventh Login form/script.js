@@ -33,8 +33,11 @@ function toast(msg, clr) {
 
 }
 
-// let users = JSON.parse(localStorage.getItem("users")) || [];
-let users = JSON.parse(localStorage.getItem("users")) || []
+
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+// SignUp Script 
+
 function signUp() {
     event.preventDefault()
     userName = inputValue("userName").trim()
@@ -43,7 +46,7 @@ function signUp() {
 
 
     if (!userName || !email || !password) {
-        toast("please fill the input fields", "error")
+        toast("Please fill the input fields", "error")
         return
     }
 
@@ -52,7 +55,7 @@ function signUp() {
     }
 
     let isUserFound = users.find(user => {
-        return user.email == email && user.password == password
+        return user.email == email
     })
 
     // console.log(isUserFound.name);
@@ -75,11 +78,15 @@ function signUp() {
     localStorage.setItem("users", allUsers)
 }
 
+// ShowUser script
+
 function showUser() {
     event.preventDefault()
     let usersFromLocalStorage = JSON.parse(localStorage.getItem("users"))
     console.log(usersFromLocalStorage);
 }
+
+// SignIn Script
 
 function signIn() {
     event.preventDefault()
@@ -117,5 +124,46 @@ function signIn() {
     else {
         toast("Incorrect Passsword or Email", "error")
     }
+
+}
+
+// Delete User Script
+
+function delUser() {
+    let users = JSON.parse(localStorage.getItem("users")) || []
+    if (!Array.isArray(users)) {
+        users = []
+    }
+    email = inputValue("email")
+    password = inputValue("password")
+
+    let userIndex = users.findIndex(user => user.email === email)
+    if (users[userIndex].password === password){
+        if (userIndex !== -1) {
+            users.splice(userIndex, 1)
+            localStorage.setItem("users", JSON.stringify(users));
+
+            toast("User Deleted", "success")
+        }
+        else {
+            toast("User Not Found", "error")
+        }
+    }
+    else{
+        toast('Please Enter the correct Password' ,"error")
+    }
+
+    // users.filter(item =>{
+    //     if(item.email===email && item.password === password){
+
+    //     }
+}
+
+
+// Update User Script
+function updateUser() {
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+
 
 }
