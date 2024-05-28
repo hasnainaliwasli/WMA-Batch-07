@@ -138,7 +138,7 @@ function delUser() {
     password = inputValue("password")
 
     let userIndex = users.findIndex(user => user.email === email)
-    if (users[userIndex].password === password){
+    if (users[userIndex].password === password) {
         if (userIndex !== -1) {
             users.splice(userIndex, 1)
             localStorage.setItem("users", JSON.stringify(users));
@@ -149,8 +149,8 @@ function delUser() {
             toast("User Not Found", "error")
         }
     }
-    else{
-        toast('Please Enter the correct Password' ,"error")
+    else {
+        toast('Please Enter the correct Password', "error")
     }
 
     // users.filter(item =>{
@@ -164,6 +164,24 @@ function delUser() {
 function updateUser() {
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
+    userName = inputValue("userName").trim()
+    email = inputValue("email")
+    password = inputValue("password")
 
+    let found = users.filter(user => (user.email === email && user.password === password))
+
+    if (found.length === 0) {
+        return toast("Please Enter a Valid Email and Password" ,"error")
+    } {
+
+        let passwordNew = prompt("Enter your new password")
+        found.map(user => {
+            user.password = passwordNew
+            toast("User Updated","success")
+        })
+    }
+
+    localStorage.setItem("users", JSON.stringify(users))
+    console.log(users);
 
 }
