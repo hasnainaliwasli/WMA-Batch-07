@@ -138,7 +138,7 @@ function todo_id() {
 
 // TODO Management
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
-
+// Adding Todo
 function todo_add() {
     event.preventDefault()
 
@@ -163,7 +163,7 @@ function todo_add() {
         id: todo_id(),
         status: 'InComplete',
         createdAt: new Date(),
-        user_id:
+        
     }
     todos.push(todo)
 
@@ -171,8 +171,7 @@ function todo_add() {
     localStorage.setItem("Todos", allUsers)
 }
 
-
-
+// Show Todos List in Table
 function todo_view() {
 
     event.preventDefault()
