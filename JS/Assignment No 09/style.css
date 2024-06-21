@@ -13,7 +13,7 @@ body {
 }
 
 .box_1 {
-    height: 150px;
+    height: 200px;
     border: 1px solid rgba(34, 32, 32, 0.576);
     border-radius: 5px;
     width: 100%;
@@ -23,11 +23,11 @@ body {
 }
 
 .box_2 {
-    height: 150px;
+    height: 200px;
     border: 1px solid rgba(42, 40, 40, 0.559);
     border-radius: 5px;
     width: 100%;
-    
+
 }
 .box_output {
     height: 200px;
@@ -45,8 +45,30 @@ body {
     outline: none;
     border-radius: 5px;
 }
+.btns:hover{
+    background-color: rgb(189, 10, 10);
+}
 
 .btns:first-child {
     margin-top: 17px;
 }
 
+#addUser_btn{
+    width: 50%;
+    border: none;
+    outline: none;
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 20%;
+}
+#addUser_btn:hover{
+    background-color: rgb(15, 109, 15);
+    cursor: pointer;
+}
+
+input{
+    margin: 7px;
+}
