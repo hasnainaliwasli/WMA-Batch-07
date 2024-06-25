@@ -58,33 +58,62 @@
         <div class="boxes">
             <div class="box_1">
 
-                <button type="button" class="btn btn-primary btns">Show Image</button>
-                <button type="button" class="btn btn-primary btns">Show Table</button>
-                <button type="button" class="btn btn-primary btns">Print Users in Console</button>
+                <button type="button" class="btn btn-primary btns" id="show_img" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Show Image</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Hosting Plans</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="./img.webp" alt="Hosting Image" id="modal_img">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                    style="background-color: red;border: none;outline: none;">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!--  -->
+
+                <button type="button" class="btn btn-primary btns" id="show_table">Show Table</button>
+                <button type="button" class="btn btn-primary btns" id='print_users'>Print Users in Console</button>
 
             </div>
             <div class="box_2 p-4">
                 <div class="row">
                     <div class="col-6">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="FirstName" aria-label="Username">
+                            <input type="text" class="form-control" placeholder="FirstName" id="firstName"
+                                aria-label="Username">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="LastName" aria-label="Username">
+                            <input type="text" class="form-control" placeholder="LastName" id="lastName" aria-label="Username">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Email" aria-label="Username">
+                            <input type="email" class="form-control" placeholder="Email" id="email" aria-label="Username">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="input-group">
-                            <input type="date" class="form-control" placeholder="FirstName" aria-label="Username">
+                            <input type="date" class="form-control" placeholder="FirstName" id="date" aria-label="Username">
                         </div>
                     </div>
                 </div>
@@ -101,6 +130,8 @@
         <div class="box_output">
 
         </div>
+
+        <button type="button" class="btn btn-outline-dark " id="clrBtn">Clear Output</button>
 
 
     </div>

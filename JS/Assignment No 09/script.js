@@ -1,5 +1,5 @@
 // Toastify Function
-function Toast(clr, msg) {
+function Toast(msg, clr) {
     let color = ''
     switch (clr) {
         case 'error':
@@ -16,8 +16,8 @@ function Toast(clr, msg) {
         destination: "https://github.com/apvarun/toastify-js",
         newWindow: true,
         close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "center", // `left`, `center` or `right`
+        gravity: "bottom", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
             // background: "linear-gradient(to right, #00b09b, #96c93d)",
@@ -26,5 +26,83 @@ function Toast(clr, msg) {
         onClick: function () { } // Callback after click
     }).showToast();
 }
+
+// Function to get Elements from Document
+function getElement(id) {
+    return document.getElementById(id)
+}
+
+
+// ALL BUTTONS
+const showImage = getElement('show_img')
+const show_table = getElement('show_table')
+const print_users = getElement('print_users')
+const addUser_btn = getElement('addUser_btn')
+
+
+let users = []
+
+addUser_btn.addEventListener('click', () => {
+    let firstName = getElement('firstName').value
+    let lastName = getElement('lastName').value
+    let email = getElement('email').value
+    let date = getElement('date').value
+
+    if (!firstName || !lastName || !email || !date) {
+        Toast('Please Fill all the output fields', 'error')
+        return
+    }
+    else {
+        let user = {
+            firstName,
+            lastName,
+            email,
+            dob: date,
+        }
+
+        users.push(user)
+        Toast('User added Successfully', 'success')
+
+    }
+
+
+
+
+})
+
+
+print_users.addEventListener('click', () => {
+    console.log(users);
+})
+
+show_table.addEventListener('click', () => {
+
+
+    if (users.length < 1) {
+        Toast('User is not available', 'error');
+    }
+    else {
+        let box_output = getElement('box_output')
+
+        let startTable = "<div class='table-responsive'> <table class='table'>"
+        let tableHead = "<thead><tr><th scope='col'>#</th><th scope='col'>First Name</th><th scope='col'>Last Name</th><th scope='col'>Email</th><th scope='col'>Date of Birth</th><th scope='col'>Age</th>"
+        let tableBody = '';
+        let tableEnd = "</table></div>"
+
+
+        for (i = 0; i < users.length; i++) {
+            tableBody += '<tr ><th scope="row">' + (i + 1) + '</th><td>' + users[i].firstName + '</td><td>' + users[i].lastName + '</td><td>' + users[i].email + '</td><td>' + users[i].dob + '</td><td>' + users[i].email + '</td></tr>'
+        }
+        let fullTable = startTable + tableHead + "<tbody>" + tableBody + "</tbody>" + tableEnd
+
+        box_output.innerHTML =fullTable
+
+
+    }
+
+
+
+})
+
 
 
