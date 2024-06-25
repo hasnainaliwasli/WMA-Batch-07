@@ -1,3 +1,5 @@
+
+
 // Toastify Function
 function Toast(msg, clr) {
     let color = ''
@@ -38,6 +40,9 @@ const showImage = getElement('show_img')
 const show_table = getElement('show_table')
 const print_users = getElement('print_users')
 const addUser_btn = getElement('addUser_btn')
+const clrBtn = getElement('clrBtn')
+let box_output = getElement('box_output')
+
 
 
 let users = []
@@ -82,7 +87,7 @@ show_table.addEventListener('click', () => {
         Toast('User is not available', 'error');
     }
     else {
-        let box_output = getElement('box_output')
+
 
         let startTable = "<div class='table-responsive'> <table class='table'>"
         let tableHead = "<thead><tr><th scope='col'>#</th><th scope='col'>First Name</th><th scope='col'>Last Name</th><th scope='col'>Email</th><th scope='col'>Date of Birth</th><th scope='col'>Age</th>"
@@ -90,19 +95,20 @@ show_table.addEventListener('click', () => {
         let tableEnd = "</table></div>"
 
 
-        for (i = 0; i < users.length; i++) {
-            tableBody += '<tr ><th scope="row">' + (i + 1) + '</th><td>' + users[i].firstName + '</td><td>' + users[i].lastName + '</td><td>' + users[i].email + '</td><td>' + users[i].dob + '</td><td>' + users[i].email + '</td></tr>'
+        for (let i = 0; i < users.length; i++) {
+            tableBody += '<tr ><th scope="row">' + (i + 1) + '</th><td>' + users[i].firstName + '</td><td>' + users[i].lastName + '</td><td>' + users[i].email + '</td><td>' + users[i].dob + '</td><td>' + users[i].email + '</td></tr><thead>'
         }
         let fullTable = startTable + tableHead + "<tbody>" + tableBody + "</tbody>" + tableEnd
 
-        box_output.innerHTML =fullTable
+        box_output.innerHTML = fullTable
 
 
     }
-
-
-
 })
 
 
+// Clear Button for Table
 
+clrBtn.addEventListener('click', () => {
+    box_output.innerHTML = ''
+})
