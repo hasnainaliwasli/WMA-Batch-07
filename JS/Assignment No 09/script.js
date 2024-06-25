@@ -58,11 +58,22 @@ addUser_btn.addEventListener('click', () => {
         return
     }
     else {
+
+        let ages = () => {
+            let nowDatev = new Date()
+            let dobb = new Date(date)
+
+            let age = nowDatev.getFullYear() - dobb.getFullYear()
+            return age
+        }
+
         let user = {
             firstName,
             lastName,
             email,
             dob: date,
+            age: ages()
+
         }
 
         users.push(user)
@@ -96,7 +107,7 @@ show_table.addEventListener('click', () => {
 
 
         for (let i = 0; i < users.length; i++) {
-            tableBody += '<tr ><th scope="row">' + (i + 1) + '</th><td>' + users[i].firstName + '</td><td>' + users[i].lastName + '</td><td>' + users[i].email + '</td><td>' + users[i].dob + '</td><td>' + users[i].email + '</td></tr><thead>'
+            tableBody += '<tr ><th scope="row">' + (i + 1) + '</th><td>' + users[i].firstName + '</td><td>' + users[i].lastName + '</td><td>' + users[i].email + '</td><td>' + users[i].dob + '</td><td>' + users[i].age + '</td></tr><thead>'
         }
         let fullTable = startTable + tableHead + "<tbody>" + tableBody + "</tbody>" + tableEnd
 
