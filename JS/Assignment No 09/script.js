@@ -45,7 +45,14 @@ let box_output = getElement('box_output')
 
 
 
-let users = []
+// let users = []
+
+// let users = JSON.parse(localStorage.getItem('users')) || [];
+let users = JSON.parse(localStorage.getItem("users"));
+if (!Array.isArray(users)) {
+    users = []
+}
+
 
 addUser_btn.addEventListener('click', () => {
     let firstName = getElement('firstName').value
@@ -75,8 +82,9 @@ addUser_btn.addEventListener('click', () => {
             age: ages()
 
         }
-
         users.push(user)
+        let allUsers = JSON.stringify(users)
+        localStorage.setItem("users", allUsers)
         Toast('User added Successfully', 'success')
 
     }
