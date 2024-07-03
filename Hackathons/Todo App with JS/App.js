@@ -119,6 +119,7 @@ function register() {
 // Login Function start
 
 let loggedinUserID = ''
+let loggedinUserName = ''
 function Login() {
     let signinEmail = getElement('signinEmail').value
     let signinPassword = getElement('signinPassword').value
@@ -144,7 +145,7 @@ function Login() {
         if (filterMethod < 1) {
             Toast("Incorrect Email or Password", 'error')
         } else {
-            let loggedinUserName = filterMethod[0].Name
+            loggedinUserName = filterMethod[0].Name
             loggedinUserID = filterMethod[0].UserId
             let userName = getElement('userName')
             let textBeforeUsername = getElement('textBeforeUsername')
@@ -187,6 +188,11 @@ if (!Array.isArray(todos)) {
 }
 
 function addTodo() {
+    let todos = JSON.parse(localStorage.getItem(loggedinUserID));
+    if (!Array.isArray(todos)) {
+        todos = [];
+    }
+
     let todoTitle = getElement('todoTitle').value;
     let textArea = getElement('textArea').value;
     let createdAT = curentDate.toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' });
@@ -196,7 +202,9 @@ function addTodo() {
         Title: todoTitle,
         Text: textArea,
         createdAT,
-        todoID
+        todoID,
+        UserName: loggedinUserName,
+        description:textArea,
     }
     todos.push(todo)
     let allTodos = JSON.stringify(todos)
