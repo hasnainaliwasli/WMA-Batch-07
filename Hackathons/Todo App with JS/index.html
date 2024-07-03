@@ -47,7 +47,7 @@
 
         <main>
             <!-- SignUp Section Start -->
-            <div class="container d-flex justify-content-center align-items-center " id="signup_container"
+            <div class="container d-flex justify-content-center d-none align-items-center " id="signup_container"
                 style="height: calc(100vh - 112px);">
                 <div class="card border-success mb-3 d-flex justify-content-center" id="signup_card"
                     style="max-width: 28rem; width: 100%;">
@@ -56,16 +56,16 @@
                         <h5 class="card-title">Please Fill all the Fields <span class="text-danger">*</span></h5>
                         <!-- <p class="card-text"><input type="text" name="" id=""></p> -->
                         <div class="input-group mb-3">
-                            <input type="text" id="signupUserName" class="form-control" placeholder="Username" aria-label="Username"
-                                aria-describedby="basic-addon1">
+                            <input type="text" id="signupUserName" class="form-control" placeholder="Username"
+                                aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         <div class="input-group mb-3">
-                            <input type="email" class="form-control" id="signupEmail" placeholder="Email" aria-label="Username"
-                                aria-describedby="basic-addon1">
+                            <input type="email" class="form-control" id="signupEmail" placeholder="Email"
+                                aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" id="signupPassword" class="form-control" placeholder="Password" aria-label="Username"
-                                aria-describedby="basic-addon1">
+                            <input type="password" id="signupPassword" class="form-control" placeholder="Password"
+                                aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         <div id="signupBtnDiv" class="d-flex justify-content-center">
                             <button id="signupBtn" class="btn btn-primary " onclick="register()">Register</button>
@@ -90,17 +90,17 @@
                     <div class="card-header bg-primary border-success fw-bold text-white">SIGN IN</div>
                     <div class="card-body text-success">
                         <h5 class="card-title">Please Fill all the Fields <span class="text-danger">*</span></h5>
-    
+
                         <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Email" aria-label="Username"
-                                aria-describedby="basic-addon1">
+                            <input type="email" id="signinEmail" class="form-control" placeholder="Email"
+                                aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" placeholder="Password" aria-label="Username"
-                                aria-describedby="basic-addon1">
+                            <input type="password" id="signinPassword" class="form-control" placeholder="Password"
+                                aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         <div id="signinBtnDiv" class="d-flex justify-content-center">
-                            <button id="signinBtn" class="btn btn-primary ">Login</button>
+                            <button id="signinBtn" class="btn btn-primary " onclick="Login()">Login</button>
                         </div>
                     </div>
                     <div

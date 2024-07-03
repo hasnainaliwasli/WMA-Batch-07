@@ -43,6 +43,12 @@ function idGenerator() {
     return Math.random().toString(32).slice(2)
 }
 
+// Email Validation Function
+let Regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+function isEmail(email) {
+    return Regex.test(email);
+}
+
 
 // Toogle between both signup and signin
 let signupToggle = getElement('signupToogle')
@@ -62,12 +68,13 @@ signinToggle.addEventListener('click', () => {
 })
 
 ////////////////////////////////////////////////////
-// For SignUp
+// Accessing Local Storage
 let users = JSON.parse(localStorage.getItem('Users'));
 if (!users) {
     users = []
 }
 
+// Signup Function start
 function register() {
     let signupUserName = getElement('signupUserName').value
     let signupEmail = getElement('signupEmail').value
@@ -79,10 +86,16 @@ function register() {
         return Toast("Please Fillup All the Fields", 'error')
     } else {
 
+        if (!isEmail(signupEmail)) {
+            return Toast("Please Enter Correct Email", 'error')
+        }
+
+        signupUserName = signupUserName.trim()
+        signupEmail = signupEmail.trim()
         let user = {
-            signupUserName,
-            signupEmail,
-            signupPassword,
+            Name: signupUserName,
+            Email: signupEmail,
+            Password: signupPassword,
             UserId,
             createdAT
         }
@@ -90,7 +103,7 @@ function register() {
         users.push(user);
         let allUsers = JSON.stringify(users)
         localStorage.setItem('Users', allUsers)
-        console.log(users);
+        // console.log(users);
         Toast("Registration Sucessfull", 'success')
         getElement('signupUserName').value = ''
         getElement('signupEmail').value = ''
@@ -100,6 +113,42 @@ function register() {
 
     }
 }
+// Signup Function End
 
 
+// Login Function start
+function Login() {
+    let signinEmail = getElement('signinEmail').value
+    let signinPassword = getElement('signinPassword').value
 
+    if (!signinEmail, !signinPassword) {
+        return Toast('Please Fill out all the Fields', 'error')
+    }
+    else {
+
+        if (!isEmail(signinEmail)) {
+            return Toast("Please Enter Correct Email", 'error')
+        }
+        else {
+            signinPassword = signinPassword.trim()
+        }
+        let allRegisteredUser = JSON.parse(localStorage.getItem('Users'))
+
+        // For Getting the Name and ID of logged in user
+        let filterMethod = allRegisteredUser.filter((user) => {
+            return user.Email === signinEmail && user.Password === signinPassword;
+        })
+
+        if (filterMethod < 1) {
+            Toast("Incorrect Email or Password", 'error')
+        } else {
+            let loggedinUserName = filterMethod[0].Name
+            let loggedinUserID = filterMethod[0].UserId
+let 
+            
+        }
+    }
+
+}
+
+// Login Function End
