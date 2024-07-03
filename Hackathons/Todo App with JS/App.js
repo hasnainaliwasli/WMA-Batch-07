@@ -29,5 +29,9 @@ function Toast(msg, cond) {
     }).showToast();
 }
 
+// For set Year in footer
+let curentDate= new Date().getFullYear()
+document.getElementById('curentDate').innerHTML = curentDate;
 
 
+let signupToggle = document.getElementById('')
