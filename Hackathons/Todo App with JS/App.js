@@ -30,8 +30,32 @@ function Toast(msg, cond) {
 }
 
 // For set Year in footer
-let curentDate= new Date().getFullYear()
+let curentDate = new Date().getFullYear()
 document.getElementById('curentDate').innerHTML = curentDate;
 
+// for getting elements
+function getElement(id){
+    return document.getElementById(id)
+}
 
-let signupToggle = document.getElementById('')
+
+// Toogle between both signup and signin
+let signupToggle = getElement('signupToogle')
+let signinToggle = getElement('signinToogle')
+let signup_container = getElement('signup_container')
+let signin_container = getElement('signin_container')
+
+// for hiding signin showing signup
+signupToggle.addEventListener('click', () => {
+    signup_container.classList.remove('d-none');
+    signin_container.classList.add('d-none');
+})
+// for hiding signup showing signin
+signinToggle.addEventListener('click', () => {
+    signup_container.classList.add('d-none');
+    signin_container.classList.remove('d-none');
+})
+
+
+
+
