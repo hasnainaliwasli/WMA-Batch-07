@@ -159,6 +159,7 @@ function Login() {
             getElement('signinEmail').value = '';
             getElement('todo_container').classList.remove('d-none')
             getElement('todo_Table').classList.remove('d-none')
+            Toast("Login Successful", 'success')
         }
     }
 }
@@ -174,9 +175,10 @@ function logout() {
     userName.innerHTML = 'UserName';
     getElement('todo_container').classList.add('d-none')
     getElement('todo_Table').classList.add('d-none')
+    getElement('hr_line').classList.add('d-none');
+    Toast('Logout Succefully', 'success')
+
 }
-
-
 
 ////////////////////////////////////////////////////////////////
 // TODO ADD Fucntion
@@ -197,25 +199,26 @@ function addTodo() {
     let textArea = getElement('textArea').value;
     let createdAT = curentDate.toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' });
     let todoID = idGenerator();
+    if (!todoTitle, !textArea) {
+        Toast("Please Enter the Complete Details", 'error')
+    } else {
+        let todo = {
+            Title: todoTitle,
+            description: textArea,
+            createdAT,
+            todoID,
+            UserName: loggedinUserName,
 
-    let todo = {
-        Title: todoTitle,
-        description: textArea,
-        createdAT,
-        todoID,
-        UserName: loggedinUserName,
-
+        }
+        todos.push(todo)
+        let allTodos = JSON.stringify(todos)
+        localStorage.setItem(loggedinUserID, allTodos)
+        console.log(todos);
+        Toast('TODO Added', 'success')
+        showTodo();
     }
-    todos.push(todo)
-    let allTodos = JSON.stringify(todos)
-    localStorage.setItem(loggedinUserID, allTodos)
-    console.log(todos);
-    showTodo();
 
 }
-
-
-
 
 function showTodo() {
     let todos = JSON.parse(localStorage.getItem(loggedinUserID));
@@ -224,6 +227,8 @@ function showTodo() {
     }
 
     let table = getElement('todo_Table');
+    let hr_line = getElement('hr_line');
+    hr_line.classList.remove('d-none')
     table.innerHTML = ''; // Clear the existing table content
 
     let tableHead = `
