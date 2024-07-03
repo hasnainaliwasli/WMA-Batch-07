@@ -20,6 +20,8 @@
 <body>
     <div class="main_container">
 
+        <!-- --------------------------------------------------------------------------------->
+
         <!--  Navbar Header Start -->
         <header>
             <nav class="navbar navbar-expand-lg bg-primary text-white">
@@ -31,13 +33,13 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active text-white " aria-current="page" href="#">Home</a>
-                            </li>
+
                         </ul>
-                        <span class="navbar-text me-4 text-white" id="textBeforeUsername">
-                            Plaese <span id="userName" class="me-4 fw-bold "
-                                style="color: #FFFF00;text-decoration: underline;">Login</span>
+                        <span class="navbar-text me-4 text-white ">
+                            <span id="textBeforeUsername"> Plaese Login to Show </span> <span id="userName"
+                                class="me-4 fw-bold " style="color: #FFFF00;text-decoration: underline;">UserName</span>
+                            <button class="btn btn-danger btn-sm d-none" id="logout_btn"
+                                onclick="logout()">LogOut</button>
                         </span>
                     </div>
                 </div>
@@ -45,7 +47,12 @@
         </header>
         <!-- Headers End -->
 
+        <!-- --------------------------------------------------------------------------------->
+
         <main>
+
+            <!-- ----------------------------------------------------------------------------->
+
             <!-- SignUp Section Start -->
             <div class="container d-flex justify-content-center d-none align-items-center " id="signup_container"
                 style="height: calc(100vh - 112px);">
@@ -81,9 +88,10 @@
             </div>
             <!-- Signup section End -->
 
+            <!-------------------------------------------------------------------------------->
 
             <!-- SignIn Section Start -->
-            <div class="container d-flex justify-content-center align-items-center " id="signin_container"
+            <div class="container d-flex justify-content-center align-items-center" id="signin_container"
                 style="height: calc(100vh - 112px);">
                 <div class="card border-success mb-3 d-flex justify-content-center" id="signin_card"
                     style="max-width: 28rem; width: 100%;">
@@ -114,13 +122,86 @@
             <!-- SignIn section End -->
 
 
+            <!-------------------------------------------------------------------------------->
+
+            <!-- TODOS Adding Section Starts -->
+            <div class="container mt-3 d-flex justify-content-center d-none" id="todo_container">
+                <div class="card border-success mb-3 d-flex justify-content-center" id="todo_card"
+                    style="max-width: 48rem; width: 100%;">
+                    <div class="card-header bg-primary border-success fw-bold text-white">TODOS</div>
+                    <div class="card-body text-success">
+
+                        <div class="input-group mb-3">
+
+                            <input type="text" id="todoTitle" class="form-control" placeholder="Title"
+                                aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-2">
+                            <textarea class="form-control" id="textArea" placeholder="Enter your Todo Task"
+                                aria-label="With textarea"></textarea>
+                        </div>
+
+                        <div id="signupBtnDiv" class="d-flex justify-content-center">
+                            <button id="signupBtn" class="btn btn-primary " onclick="addTodo()">ADD TODO</button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!-- TODOS Adding Section Ends -->
+
+            <hr>
+
+            <!-- TODOS Table Section Starts -->
+            <table class="container table border-primary d-none" id="todo_Table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Created At</th>
+                        <th scope="col">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton lore</td>
+                        <td>Thornton lore</td>
+                        <td>Thornton lore</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry the Bird</td>
+                        <td>Larry the Bird lor</td>
+                        <td>Larry the Bird</td>
+                        <td>Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- TODOS Table Section Ends -->
+
+
+
 
 
         </main>
-
-
-
-
 
 
         <!-- Footer Start-->
@@ -135,15 +216,9 @@
                     </div>
                 </div>
             </nav>
+        </footer>
+        <!-- Footer Section Ends Here -->
     </div>
-    </footer>
-
-
-
-
-
-
-
 
 
 

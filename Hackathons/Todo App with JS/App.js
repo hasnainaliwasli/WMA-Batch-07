@@ -80,7 +80,7 @@ function register() {
     let signupEmail = getElement('signupEmail').value
     let signupPassword = getElement('signupPassword').value
     let UserId = idGenerator();
-    let createdAT = curentDate.toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' });
+
 
     if (!signupUserName, !signupEmail, !signupPassword) {
         return Toast("Please Fillup All the Fields", 'error')
@@ -97,7 +97,7 @@ function register() {
             Email: signupEmail,
             Password: signupPassword,
             UserId,
-            createdAT
+
         }
 
         users.push(user);
@@ -117,6 +117,8 @@ function register() {
 
 
 // Login Function start
+
+let loggedinUserID = ''
 function Login() {
     let signinEmail = getElement('signinEmail').value
     let signinPassword = getElement('signinPassword').value
@@ -143,12 +145,63 @@ function Login() {
             Toast("Incorrect Email or Password", 'error')
         } else {
             let loggedinUserName = filterMethod[0].Name
-            let loggedinUserID = filterMethod[0].UserId
-let 
-            
+            loggedinUserID = filterMethod[0].UserId
+            let userName = getElement('userName')
+            let textBeforeUsername = getElement('textBeforeUsername')
+            let logout_btn = getElement('logout_btn')
+            textBeforeUsername.innerHTML = "Welcome here Dear "
+            userName.innerHTML = loggedinUserName;
+            logout_btn.classList.remove('d-none')
+            signup_container.classList.add('d-none');
+            signin_container.classList.add('d-none');
+            getElement('signinPassword').value = ''
+            getElement('signinEmail').value = '';
+            getElement('todo_container').classList.remove('d-none')
+            getElement('todo_Table').classList.remove('d-none')
         }
     }
+}
+// Login Function End
 
+
+// Logout Button Function
+function logout() {
+    // signup_container.classList.remove('d-none');
+    signin_container.classList.remove('d-none');
+    logout_btn.classList.add('d-none')
+    textBeforeUsername.innerHTML = " Plaese Login to Show "
+    userName.innerHTML = 'UserName';
+    getElement('todo_container').classList.add('d-none')
+    getElement('todo_Table').classList.add('d-none')
 }
 
-// Login Function End
+
+
+////////////////////////////////////////////////////////////////
+// TODO ADD Fucntion
+
+// Accessing Local Storage for TODOS
+let todos = JSON.parse(localStorage.getItem(loggedinUserID));
+if (!Array.isArray(todos)) {
+    todos = [];
+}
+
+function addTodo() {
+    let todoTitle = getElement('todoTitle').value;
+    let textArea = getElement('textArea').value;
+    let createdAT = curentDate.toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' });
+    let todoID = idGenerator();
+
+    let todo = {
+        Title: todoTitle,
+        Text: textArea,
+        createdAT,
+        todoID
+    }
+    todos.push(todo)
+    let allTodos = JSON.stringify(todos)
+    localStorage.setItem(loggedinUserID, allTodos)
+    console.log(todos);
+
+    console.log();
+}
