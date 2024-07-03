@@ -200,16 +200,118 @@ function addTodo() {
 
     let todo = {
         Title: todoTitle,
-        Text: textArea,
+        description: textArea,
         createdAT,
         todoID,
         UserName: loggedinUserName,
-        description:textArea,
+
     }
     todos.push(todo)
     let allTodos = JSON.stringify(todos)
     localStorage.setItem(loggedinUserID, allTodos)
     console.log(todos);
+    showTodo();
 
-    console.log();
+}
+
+
+
+
+function showTodo() {
+    let todos = JSON.parse(localStorage.getItem(loggedinUserID));
+    if (!Array.isArray(todos)) {
+        todos = [];
+    }
+
+    let table = getElement('todo_Table');
+    table.innerHTML = ''; // Clear the existing table content
+
+    let tableHead = `
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+    `;
+    table.insertAdjacentHTML('afterbegin', tableHead); // Insert the table header
+
+    let tableBody = document.createElement('tbody');
+
+    todos.forEach((todo, index) => {
+        let row = document.createElement('tr');
+        row.innerHTML = `
+            <th scope="row">${index + 1}</th>
+            <td>${todo.Title}</td>
+            <td>${todo.description}</td>
+            <td>${todo.createdAT}</td>
+            <td>
+                <button class="btn btn-success btn-sm" onclick="editTodo(${index})">Edit</button>
+                <button class="btn btn-danger btn-sm" onclick="deleteTodo(${index})">Delete</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+
+    table.appendChild(tableBody);
+}
+
+
+function deleteTodo(index) {
+    let todos = JSON.parse(localStorage.getItem(loggedinUserID));
+    if (!Array.isArray(todos)) {
+        todos = [];
+    }
+    todos.splice(index, 1); // Remove the todo at the specified index
+    localStorage.setItem(loggedinUserID, JSON.stringify(todos));
+    showTodo(); // Refresh the table
+}
+
+
+let updateId = ''
+function editTodo(index) {
+    let todos = JSON.parse(localStorage.getItem(loggedinUserID));
+    if (!Array.isArray(todos)) {
+        todos = [];
+    }
+    let updateBtn = getElement('updateBtn');
+    updateBtn.classList.remove('d-none')
+
+    getElement('todoTitle').value = todos[index].Title
+    getElement('textArea').value = todos[index].description
+    updateId = todos[index].todoID
+
+}
+
+function updateTodo() {
+    let todos = JSON.parse(localStorage.getItem(loggedinUserID));
+    if (!Array.isArray(todos)) {
+        todos = [];
+    }
+
+    let todoTitle = getElement('todoTitle').value;
+    let textArea = getElement('textArea').value;
+
+
+
+    todos.map((e) => {
+        if (e.todoID == updateId) {
+            e.Title = todoTitle,
+                e.description = textArea
+        }
+    })
+
+    let updatedTodos = JSON.stringify(todos)
+    localStorage.setItem(loggedinUserID, updatedTodos);
+    let updateBtn = getElement('updateBtn');
+    updateBtn.classList.add('d-none')
+    getElement('todoTitle').value = ''
+    getElement('textArea').value = ''
+    Toast("TODO Updated Successfully", 'success')
+    showTodo();
+
+
 }

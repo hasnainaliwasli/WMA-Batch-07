@@ -142,8 +142,11 @@
                         </div>
 
                         <div id="signupBtnDiv" class="d-flex justify-content-center">
-                            <button id="signupBtn" class="btn btn-primary " onclick="addTodo()">ADD TODO</button>
+                            <button id="" class="btn btn-primary me-2 " onclick="addTodo()">ADD TODO</button>
+                            <button id="updateBtn" class="btn btn-primary me-2 d-none" onclick="updateTodo()">Update TODO</button>
+                            <button id="" class="btn btn-primary " onclick="showTodo()">Show TODOS</button>
                         </div>
+                        
                     </div>
 
 
@@ -156,42 +159,7 @@
 
             <!-- TODOS Table Section Starts -->
             <table class="container table border-primary d-none" id="todo_Table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Created At</th>
-                        <th scope="col">Action</th>
 
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                      
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton lore</td>
-                        
-                        <td>Thornton lore</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry the Bird</td>
-                        <td>Larry the Bird lor</td>
-                        <td>Larry the Bird</td>
-                        <td>Larry the Bird</td>
-                       
-                    </tr>
-                </tbody>
             </table>
 
             <!-- TODOS Table Section Ends -->
