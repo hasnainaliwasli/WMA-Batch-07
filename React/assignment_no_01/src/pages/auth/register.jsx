@@ -20,7 +20,7 @@ export default function register() {
     <input type="password" class="form-control" id="exampleInputPassword1"/>
   </div>
 
-  <button type="submit" id='btn' class="btn btn-primary text-center">Submit</button>
+  <button type="submit" id='btn' class="btn btn-primary text-center">Register</button>
 </form>
     </div>
   )
