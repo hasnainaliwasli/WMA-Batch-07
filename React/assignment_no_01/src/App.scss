@@ -22,7 +22,12 @@ main{
     align-items: center;
     height: calc(100vh - 112px);
 }
-button{
+
+#btn{
     width: 10rem;
     align-self: center;
 }
+
+// #moveBtn{
+//     width: 25rem;
+// }
