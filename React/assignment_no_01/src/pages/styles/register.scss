@@ -1,0 +1,15 @@
+#form {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    
+  }
+
+  #container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 112px); /* Full viewport height to center vertically */
+  }
