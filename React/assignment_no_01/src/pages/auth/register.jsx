@@ -1,32 +1,51 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/register.scss'
-import { Link } from 'react-router-dom'
+import Routing from '../../components/Routing/routing'
 
-export default function register() {
+export default function Register() {
+
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [users, setUsers] = useState([])
+
+
+  const registerHandle = (e) => {
+    e.preventDefault()
+    let user = {
+      Email: email,
+      Name: name,
+      Password: password
+    }
+    setUsers((prevUsers) => [...prevUsers, user])
+  }
+
+  useEffect(() => {
+    console.log(users);
+  }, [users])
+
+
   return (
     <div id='container'>
-      <form id='form' className='border p-4 rounded'>
-        <div class="mb-3">
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" />
+      <form id='form' className='border p-4 rounded' onSubmit={registerHandle}>
+        <div className="mb-3">
+          <div className="mb-3">
+            <label htmlFor="exampleInputName1" className="form-label">Full Name</label>
+            <input type="text" className="form-control" id="exampleInputName1" onChange={(e) => { setName(e.target.value) }} />
           </div>
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => { setEmail(e.target.value) }} />
+          <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
         </div>
 
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" />
+        <div className="mb-3">
+          <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+          <input type="password" className="form-control" id="exampleInputPassword1" onChange={(e) => { setPassword(e.target.value) }} />
         </div>
-        <button type="submit" id='btn' class="btn btn-primary text-center">Register</button>
-        <div id="moveBtn" className='d-flex justify-content-center mt-3 '>
-          <p className='pt-1 px-1 '>Already have an Account? </p>
-          <Link to="/">
-            <p class="text-center pt-1">Login</p>
-          </Link>
-        </div>
+        <button type="submit" id='btn' className="btn btn-primary text-center" >Register</button>
+
+        <Routing classes="d-flex justify-content-center mt-3" text="Already have an Account? " linkName="Login" path="/" />
       </form>
     </div>
   )

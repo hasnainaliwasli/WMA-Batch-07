@@ -25,7 +25,7 @@ function App() {
             <Route exact path='/' Component={Login} />
             <Route path='/register' Component={Register} />
             <Route path='/forgetPass' Component={ForgetPass} />
-            
+
           </Routes>
 
         </Router>

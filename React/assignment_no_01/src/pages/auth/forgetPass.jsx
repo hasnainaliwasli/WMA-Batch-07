@@ -1,22 +1,18 @@
 import React from 'react'
 import '../styles/login.scss'
-import { Link } from 'react-router-dom'
+import Routing from '../../components/Routing/routing'
 
-export default function forgetPass() {
+export default function ForgetPass() {
     return (
         <div id='container'>
             <form id='form' className='border p-4 rounded'>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                <div className="mb-3">
+                    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                 </div>
-                <button type="submit" id='btn' class="btn btn-primary text-center">Find Account</button>
-                <div id="moveBtn" className='d-flex justify-content-end mt-3 '>
-                    <p className='pt-1 '>Want to  </p>
-                    <Link to="/">
-                    <p className='pt-1 px-1'> Login</p>                       
-                    </Link>
-                </div>
+                <button type="submit" id='btn' className="btn btn-primary text-center">Find Account</button>
+
+                <Routing classes="d-flex justify-content-end mt-3 me-3" text="Wants to  " linkName="Login" path="/" />
             </form>
         </div>
     )
