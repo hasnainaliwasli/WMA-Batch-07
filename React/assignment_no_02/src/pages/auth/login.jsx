@@ -23,7 +23,7 @@ export default function Login() {
   });
 
 
-  const loginHandle = (e) => {
+  const LoginHandle = (e) => {
     e.preventDefault()
 
     if (!email || !password) {
@@ -32,11 +32,11 @@ export default function Login() {
 
     let user = users.find(user => user.Email === email && user.Password === password)
 
-    console.log(user);
-
     if (user) {
       toast.success("Login Successfull!!")
+      localStorage.setItem('LoggedInUser', JSON.stringify(user));
       navigate('/todo')
+
     }
     else {
       toast.error("Invalid Email or Password")
@@ -51,8 +51,9 @@ export default function Login() {
 
 
 
+
   return (
-    <div id='container' onSubmit={loginHandle}>
+    <div id='container' onSubmit={LoginHandle}>
       <form id='form' className='border p-4 rounded'>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
@@ -64,7 +65,7 @@ export default function Login() {
 
           <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
           <div className="input-group">
-            <input type =  {showPass ? "text" : "password"} value={password} className="form-control" id="exampleInputPassword1" onChange={(e) => { setPassword(e.target.value) }} />
+            <input type={showPass ? "text" : "password"} value={password} className="form-control" id="exampleInputPassword1" onChange={(e) => { setPassword(e.target.value) }} />
             <button
               type="button"
               className="btn btn-primary"

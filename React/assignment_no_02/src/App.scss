@@ -89,8 +89,6 @@ main {
 }
 
 
-
-
 // Navbar Design
 
 /* Navbar.css */
@@ -161,4 +159,21 @@ main {
     font-size: 18px;
     color: rgb(210, 36, 183);
 
+}
+
+
+// End of the Navbar
+.last{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+#chngPassBtn{
+
+}
+#logoutBtn{
+    border: 1px solid black;
+    
 }

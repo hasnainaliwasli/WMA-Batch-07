@@ -10,6 +10,8 @@ export default function Register() {
 
   const navigate = useNavigate();
 
+  const id =()=> Math.random()
+
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');

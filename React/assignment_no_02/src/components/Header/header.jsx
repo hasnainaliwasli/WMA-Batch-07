@@ -1,15 +1,26 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Header() {
 
-    const [users, setUsers] = useState(() => {
+    const navigate = useNavigate()
+    const [LoggedInUser, setLoggedInUser] = useState(() => {
         // Load users from local storage or set to an empty array if not available
-        const savedUsers = localStorage.getItem('users');
+        const savedUsers = localStorage.getItem('LoggedInUser');
         return savedUsers ? JSON.parse(savedUsers) : [];
     });
 
-    console.log();
+    const logout = () => {
+        localStorage.removeItem('LoggedInUser');
+        toast.success("Logout Successful!");
+        navigate('/')
+    }
+
+    const changePass = () => {
+
+    }
 
 
     return (
@@ -29,10 +40,15 @@ export default function Header() {
                         </ul>
 
 
-                        <p className='mt-3 me-5'>Welcome here Dear <span id='topName'>{users[0].Name}</span></p>
+                        <p className='mt-3'>Welcome here Dear <span id='topName'>{LoggedInUser.Name}</span></p>
+                        <div className="last">
+                            <button id='logoutBtn' className='btn btn-sm btn-primary me-3 ms-1' onClick={logout}>Logout</button>
+                            <button id='chngPassBtn' className='btn btn-sm btn-primary ms-3' onClick={changePass}> Change Password</button>
+                        </div>
                     </div>
                 </div>
             </nav>
+            <ToastContainer />
         </div>
     )
 }
