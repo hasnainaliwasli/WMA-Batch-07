@@ -4,7 +4,7 @@ import '../styles/login.scss';
 import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import {EyeOutlined ,EyeInvisibleOutlined} from '@ant-design/icons';
+import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 
 
 export default function ForgetPass() {
@@ -40,6 +40,10 @@ export default function ForgetPass() {
             return;
         }
 
+        if (newPass.length < 8) {
+            return toast.warning("Password Must be more than 7 character")
+        }
+
         const updatedUsers = users.map(user => {
             if (user.Email === email) {
                 return { ...user, Password: newPass };
@@ -50,7 +54,10 @@ export default function ForgetPass() {
         setUsers(updatedUsers);
         localStorage.setItem('users', JSON.stringify(updatedUsers));
         toast.success("Password changed successfully!");
-        navigate('/login');
+        setTimeout(() => {
+            navigate('/');
+        }, 1500);
+
     };
 
     const toggleShowNewPass = () => {
@@ -89,7 +96,7 @@ export default function ForgetPass() {
                                 type="button"
                                 className="btn btn-primary"
                                 onClick={toggleShowNewPass}
-                            >{showNewPass ?  <EyeInvisibleOutlined />: <EyeOutlined />}</button>
+                            >{showNewPass ? <EyeInvisibleOutlined /> : <EyeOutlined />}</button>
                         </div>
                     </div>
                     <div className="mb-3">
@@ -107,7 +114,7 @@ export default function ForgetPass() {
                                 type="button"
                                 className="btn btn-primary"
                                 onClick={toggleShowConfirmPass}
-                            >{showNewPass ?  <EyeInvisibleOutlined />: <EyeOutlined />}</button>
+                            >{showNewPass ? <EyeInvisibleOutlined /> : <EyeOutlined />}</button>
                         </div>
                     </div>
                     <button type="submit" id='btn' className="btn btn-primary text-center">Change Password</button>
