@@ -1,0 +1,61 @@
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+
+}
+
+#form {
+    display: flex;
+    width: 30rem;
+    
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 30px;
+    color: white;
+    font-weight: 600;
+    backdrop-filter: blur(20px);
+
+}
+
+
+#emailHelp {
+    color: white;
+    font-weight: 600;
+}
+
+#linkName {
+    color: pink;
+}
+
+#linkName:hover {
+    text-decoration: underline;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: calc(100vh - 112px);
+    height: 100vh;
+    background-image: url('../public/bgForm.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+#btn {
+    width: 10rem;
+    align-self: center;
+}
+
+// #moveBtn{
+//     width: 25rem;
+// }
