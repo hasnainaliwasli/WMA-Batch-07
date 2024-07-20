@@ -26,8 +26,9 @@ export default function Header() {
                             <li className="nav-item"><Link to="/todo" className="nav-link" id='navLink'>Home</Link></li>
                             <li className="nav-item"><Link to="/todo" className="nav-link" id='navLink'>Todos</Link></li>
                             <li className="nav-item"><Link to="/users" className="nav-link" id='navLink'>Users</Link></li>
-
                         </ul>
+
+
                         <p className='mt-3 me-5'>Welcome here Dear <span id='topName'>{users[0].Name}</span></p>
                     </div>
                 </div>
