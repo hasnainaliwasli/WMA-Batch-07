@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AntModal from '../modal'
 
 export default function Header() {
 
@@ -18,9 +19,9 @@ export default function Header() {
         navigate('/')
     }
 
-    const changePass = () => {
-
-    }
+    // const changePass = () => {
+        
+    // }
 
 
     return (
@@ -43,7 +44,9 @@ export default function Header() {
                         <p className='mt-3'>Welcome here Dear <span id='topName'>{LoggedInUser.Name}</span></p>
                         <div className="last">
                             <button id='logoutBtn' className='btn btn-sm btn-primary me-3 ms-1' onClick={logout}>Logout</button>
-                            <button id='chngPassBtn' className='btn btn-sm btn-primary ms-3' onClick={changePass}> Change Password</button>
+                            {/* <button id='chngPassBtn' className='btn btn-sm btn-primary ms-3' onClick={changePass}> Change Password</button> */}
+                            <AntModal />
+                       
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,8 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  const id =()=> Math.random()
+  const id = () => { return Math.random().toString(32).slice(2) }
+
 
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -59,6 +60,7 @@ export default function Register() {
         Email: trimedEmail,
         Name: trimedName,
         Password: password,
+        id: id()
       };
       setUsers((prevUsers) => [...prevUsers, user]);
       toast.success("User registered successfully!");
