@@ -6,8 +6,8 @@ export default function footer() {
 
     return (
         <div>
-            <nav className=" navbar-expand-lg bg-primary ">
-            <p className='text-center mb-0 text-white py-2'>&copy;{currentYear}. All Rights Reserved by Hasnain Ali</p>
+            <nav className=" navbar-expand-lg custom-footer" style={{ backgroundColor: 'rgb(128,24,149)' }}>
+                <p className='text-center mb-0 text-white py-2'>&copy;{currentYear}. All Rights Reserved by Hasnain Ali</p>
             </nav>
         </div>
     )

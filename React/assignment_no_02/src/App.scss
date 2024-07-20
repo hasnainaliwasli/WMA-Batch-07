@@ -63,7 +63,7 @@ main {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: calc(100vh - 97px);
+    height: calc(100vh - 118px);
 
 }
 
@@ -71,21 +71,18 @@ main {
 // Navbar Design
 
 /* Navbar.css */
-/* Navbar.css */
 #navBrand {
     font-weight: 800;
     letter-spacing: 2px;
     user-select: none;
-    cursor:default;
+    cursor: default;
 }
 
 .custom-navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // padding: 20px 40px;
     background: rgba(48, 25, 52, 0.9);
-    /* Dark purple with slight transparency */
     color: white;
     position: fixed;
     width: 100%;
@@ -120,4 +117,25 @@ main {
     font-weight: 700;
     border-radius: 15px;
     margin: 0px;
+}
+
+// Footer CSS
+.custom-footer {
+    // background: rgb(9, 12, 79);
+    box-shadow: 0 8px 20px -0px rgb(9, 12, 79);
+    box-shadow: 0 -8px 20px -0px rgba(9, 12, 79, 0.5);
+    padding: 5px;
+
+}
+
+
+
+// Top Name CSS
+
+#topName {
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 18px;
+    color: rgb(210,36,183);
+    
 }
