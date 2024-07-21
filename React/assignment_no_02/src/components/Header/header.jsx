@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import AntModal from '../modal'
+import AntModal from '../changePass'
 
 export default function Header() {
 
@@ -36,8 +36,8 @@ export default function Header() {
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                             <li className="nav-item"><Link to="/todo" className="nav-link" id='navLink'>Home</Link></li>
-                            <li className="nav-item"><Link to="/todo" className="nav-link" id='navLink'>Todos</Link></li>
-                            <li className="nav-item"><Link to="/users" className="nav-link" id='navLink'>Users</Link></li>
+                            <li className="nav-item"><Link to="/Todo/todo" className="nav-link" id='navLink'>Todos</Link></li>
+                            <li className="nav-item"><Link to="/Todo/users" className="nav-link" id='navLink'>Users</Link></li>
                         </ul>
 
 

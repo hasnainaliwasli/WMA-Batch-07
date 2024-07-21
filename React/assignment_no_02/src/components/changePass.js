@@ -65,11 +65,6 @@ const App = () => {
         localStorage.setItem('users', JSON.stringify(updatedUsers));
         localStorage.setItem('LoggedInUser', JSON.stringify(updatedUsers));
 
-
-
-
-
-
         // Modal Data
         setConfirmLoading(true);
         setTimeout(() => {

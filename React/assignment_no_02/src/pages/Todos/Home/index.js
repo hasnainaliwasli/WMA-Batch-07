@@ -1,14 +1,17 @@
 import React from 'react'
 import { Card } from 'antd';
+import { useNavigate } from 'react-router-dom';
 const { Meta } = Card;
 
 export default function Home() {
-
+const navigate = useNavigate()
     const todoCard = () => {
         console.log('todo click');
+        navigate('/Todo/todo')
     }
     const userCard = () => {
         console.log(' user click');
+        navigate('/Todo/users')
     }
 
 
