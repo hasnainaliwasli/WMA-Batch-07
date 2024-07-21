@@ -47,7 +47,7 @@ const DellConfirmModal = (props) => {
         setModalText('Deleting...');
         handleDelete(props.props.key)
         setConfirmLoading(true);
-toast.error('Todo Deleted.!!!')
+        toast.error('Todo Deleted.!!!')
         setTimeout(() => {
             setOpen(false);
             setConfirmLoading(false);

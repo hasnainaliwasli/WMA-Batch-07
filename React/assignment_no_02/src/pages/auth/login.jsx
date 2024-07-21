@@ -35,7 +35,10 @@ export default function Login() {
     if (user) {
       toast.success("Login Successfull!!")
       localStorage.setItem('LoggedInUser', JSON.stringify(user));
-      navigate('/todo')
+      setTimeout(() => {
+        navigate('/todo')
+      }, 1000);
+
 
     }
     else {
