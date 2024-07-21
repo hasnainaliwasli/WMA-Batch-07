@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { ToastContainer } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
 
 export default function CreateTodo() {
 
-    // title, location, description, date, status, dateCreated, 
 
+    const navigate = useNavigate()
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [location, setLocation] = useState('')
     const [date, setDate] = useState('')
     const [status, setStatus] = useState('')
-    const [dateCreated, setDateCreated] = useState('')
-
 
     // Logged in users 
 
@@ -41,8 +40,6 @@ export default function CreateTodo() {
         return new Date(date).toLocaleDateString(undefined, options);
     };
 
-
-
     const AddTodo = (e) => {
         e.preventDefault()
         const todoId = () => { return Math.random().toString(32).slice(2) }
@@ -61,9 +58,11 @@ export default function CreateTodo() {
         }
 
         setTodos((prevTodos) => [...prevTodos, todo])
+        toast.success('TODO Added Successfully!!!!!')
+        setTimeout(() => {
+            navigate('/Todo/todo')
+        }, 2000);
     }
-
-
 
     return (
         <div id='createTodo'>
@@ -91,12 +90,9 @@ export default function CreateTodo() {
 
                 </div>
 
-                <button type="submit" id='btn' className="btn btn-primary text-center" >ADD TODO </button>
+                <button type="submit" id='btn' className="btn btn-primary text-center " >ADD TODO </button>
             </form>
             <ToastContainer />
-
-
-
         </div>
     )
 }
