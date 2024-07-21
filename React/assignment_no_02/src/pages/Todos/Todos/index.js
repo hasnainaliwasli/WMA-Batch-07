@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import UserTable from '../Users/Table'
 import { useNavigate } from 'react-router-dom';
 import TodoTable from './Table';
-import DellConfirmModal from './DellConfirmModal';
+
 
 
 export default function Todos() {
@@ -42,7 +41,7 @@ export default function Todos() {
                     <h1 className='text-white text-center pt-3 ms-4'>All TODOS</h1><button className='btn btn-sm btn-primary mb-2' onClick={addTodo} style={{ float: 'right' }}>ADD TODO</button>
                     {/* </div> */}
                     {/* <UserTable users={users} /> */}
-                    <TodoTable todos={todos} loggedInUserId={loggedInUser.id} onEdit={handleEdit} />
+                    <TodoTable todos={todos} loggedInUserId={loggedInUser.id} />
 
 
                     

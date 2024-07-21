@@ -1,8 +1,9 @@
 import React from 'react';
-import { Table, Button } from 'antd';
+import { Table } from 'antd';
 import DellConfirmModal from './DellConfirmModal';
+import EditModal from './EditModal';
 
-const TodoTable = ({ todos, onEdit, loggedInUserId, onDelete }) => {
+const TodoTable = ({ todos, onEdit, loggedInUserId }) => {
     const columns = [
         {
             title: '#',
@@ -40,11 +41,13 @@ const TodoTable = ({ todos, onEdit, loggedInUserId, onDelete }) => {
             render: (text, record) => (
 
 
-                <span style={{ display: 'flex' }}>
-                    <Button onClick={() => onEdit(record.key)} style={{ marginRight: 8 }}>Edit</Button>
-                    <div ><DellConfirmModal props={record} /></div>
+                <span className='' style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+                    <div style={{ marginRight: 8 }}><EditModal props={record} /></div>
+                    <div > <DellConfirmModal props={record} /></div>
+
+                    {/* <Button onClick={() => onEdit(record.key)} style={{ marginRight: 8 }}>Edit</Button> */}
                     {/* <div onClick={() => onDelete(record.key)} >Delete</div> */}
-                </span>
+                </span >
             ),
         },
     ];
@@ -64,7 +67,7 @@ const TodoTable = ({ todos, onEdit, loggedInUserId, onDelete }) => {
     }));
 
     return (
-        <Table columns={columns} dataSource={data} pagination={false} />
+        <Table className='text-center' columns={columns} dataSource={data} pagination={false} />
     );
 };
 

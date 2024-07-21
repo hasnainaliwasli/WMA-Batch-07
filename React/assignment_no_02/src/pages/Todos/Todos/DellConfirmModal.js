@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Modal } from 'antd';
+import TodoTable from './Table';
 const DellConfirmModal = (props) => {
 
     const [open, setOpen] = useState(false);
@@ -8,6 +9,19 @@ const DellConfirmModal = (props) => {
     const showModal = () => {
         setOpen(true);
     };
+
+    // Logged in users
+    const [loggedInUser, setloggedInUser] = useState(() => {
+        // Load users from local storage or set to an empty array if not available
+        const savedUsers = localStorage.getItem('LoggedInUser');
+        return savedUsers ? JSON.parse(savedUsers) : [];
+    });
+
+    const handleEdit = (key) => {
+        // console.log('Edit todo with key:', key);
+        // Implement your edit logic here
+    };
+
     // Todos from local storage
     const [todos, setTodos] = useState(() => {
         // Load users from local storage or set to an empty array if not available
@@ -38,6 +52,7 @@ const DellConfirmModal = (props) => {
             setConfirmLoading(false);
             window.location.reload();
         }, 2000);
+
     };
     const handleCancel = () => {
         console.log('Clicked cancel button');
@@ -58,6 +73,7 @@ const DellConfirmModal = (props) => {
             >
                 <p>{modalText}</p>
             </Modal>
+
         </>
     );
 };
