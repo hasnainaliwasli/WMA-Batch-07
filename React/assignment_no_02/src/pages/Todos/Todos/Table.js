@@ -1,7 +1,8 @@
 import React from 'react';
 import { Table, Button } from 'antd';
+import DellConfirmModal from './DellConfirmModal';
 
-const TodoTable = ({ todos, onEdit, onDelete }) => {
+const TodoTable = ({ todos, onEdit, loggedInUserId, onDelete }) => {
     const columns = [
         {
             title: '#',
@@ -37,15 +38,22 @@ const TodoTable = ({ todos, onEdit, onDelete }) => {
             title: 'Action',
             key: 'action',
             render: (text, record) => (
-                <span>
+
+
+                <span style={{ display: 'flex' }}>
                     <Button onClick={() => onEdit(record.key)} style={{ marginRight: 8 }}>Edit</Button>
-                    <Button onClick={() => onDelete(record.key)} danger>Delete</Button>
+                    <div ><DellConfirmModal props={record} /></div>
+                    {/* <div onClick={() => onDelete(record.key)} >Delete</div> */}
                 </span>
             ),
         },
     ];
 
-    const data = todos.map((todo, index) => ({
+
+
+    const filteredTodos = todos.filter(todo => todo.UserID === loggedInUserId);
+
+    const data = filteredTodos.map((todo, index) => ({
         key: todo.TodoID,
         index: index + 1,
         title: todo.Title,
