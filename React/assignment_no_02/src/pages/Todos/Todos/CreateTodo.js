@@ -69,6 +69,7 @@ export default function CreateTodo() {
             <form id='formTodo' className='border p-4 rounded' onSubmit={AddTodo} >
                 <div className="mb-3">
                     <div className="mb-3">
+                        
                         <input type="text" required className="form-control" placeholder='Title' id="exampleInputName1" onChange={(e) => setTitle(e.target.value)} />
                     </div>
                     <textarea type="textarea" required className="form-control" placeholder='Description' id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => setDescription(e.target.value)} />

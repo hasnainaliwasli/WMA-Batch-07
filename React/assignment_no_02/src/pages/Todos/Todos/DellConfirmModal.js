@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Modal } from 'antd';
 import TodoTable from './Table';
+import { toast, ToastContainer } from 'react-toastify';
 const DellConfirmModal = (props) => {
 
     const [open, setOpen] = useState(false);
@@ -46,7 +47,7 @@ const DellConfirmModal = (props) => {
         setModalText('Deleting...');
         handleDelete(props.props.key)
         setConfirmLoading(true);
-
+toast.error('Todo Deleted.!!!')
         setTimeout(() => {
             setOpen(false);
             setConfirmLoading(false);
@@ -73,7 +74,7 @@ const DellConfirmModal = (props) => {
             >
                 <p>{modalText}</p>
             </Modal>
-
+            <ToastContainer />
         </>
     );
 };
