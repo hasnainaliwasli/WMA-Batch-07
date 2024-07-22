@@ -64,12 +64,16 @@ export default function CreateTodo() {
         }, 2000);
     }
 
+    const cancelHandler = () => {
+        navigate('/Todo/todo')
+    }
+
     return (
         <div id='createTodo'>
             <form id='formTodo' className='border p-4 rounded' onSubmit={AddTodo} >
                 <div className="mb-3">
                     <div className="mb-3">
-                        
+
                         <input type="text" required className="form-control" placeholder='Title' id="exampleInputName1" onChange={(e) => setTitle(e.target.value)} />
                     </div>
                     <textarea type="textarea" required className="form-control" placeholder='Description' id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => setDescription(e.target.value)} />
@@ -90,8 +94,10 @@ export default function CreateTodo() {
                     </div>
 
                 </div>
-
-                <button type="submit" id='btn' className="btn btn-primary text-center " >ADD TODO </button>
+                <div className="flex text-center ">
+                    <button type="submit" id='btn' className="btn btn-primary text-center " >ADD TODO </button>
+                    <button type="button" id='btn' onClick={cancelHandler} className="btn btn-danger text-center ms-3" >CANCEL </button>
+                </div>
             </form>
             <ToastContainer />
         </div>

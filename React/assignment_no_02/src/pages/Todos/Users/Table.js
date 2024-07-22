@@ -1,5 +1,4 @@
-// src/components/UserTable.js
-
+  
 import React from 'react';
 import { Table } from 'antd';
 

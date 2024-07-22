@@ -94,8 +94,7 @@ const App = () => {
                     <label htmlFor="exampleInputPassword1" className="form-label" >Old Password</label>
                     <div className="input-group">
                         <input
-                            // type={showNewPass ? "text" : "password"}
-                            // value={newPass}
+                          
                             className="form-control"
                             id="exampleInputPassword1"
                             onChange={(e) => setOldPass(e.target.value)}
@@ -109,8 +108,7 @@ const App = () => {
                     <label htmlFor="exampleInputPassword1" className="form-label" >New Password</label>
                     <div className="input-group">
                         <input
-                            // type={showNewPass ? "text" : "password"}
-                            // value={newPass}
+                         
                             className="form-control"
                             id="exampleInputPassword1"
                             onChange={(e) => { setNewPass(e.target.value) }}
@@ -124,8 +122,7 @@ const App = () => {
                     <label htmlFor="exampleInputPassword1" className="form-label">Confirm New Password</label>
                     <div className="input-group">
                         <input
-                            // type={showNewPass ? "text" : "password"}
-                            // value={newPass}
+                       
                             className="form-control"
                             id="exampleInputPassword1"
                             onChange={(e) => { setConfirmPass(e.target.value) }}

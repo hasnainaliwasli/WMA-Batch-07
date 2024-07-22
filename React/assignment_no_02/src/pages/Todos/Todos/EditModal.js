@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Modal, Input } from 'antd';
+import { Button, Modal } from 'antd';
 import { toast, ToastContainer } from 'react-toastify';
 
 const EditModal = (props) => {
@@ -19,7 +19,6 @@ const EditModal = (props) => {
     // Built in States for Modal
     const [open, setOpen] = useState(false);
     const [confirmLoading, setConfirmLoading] = useState(false);
-    const [modalText, setModalText] = useState('Are you sure you want to delete Todo?');
 
     const showModal = () => {
         setOpen(true);
@@ -30,11 +29,6 @@ const EditModal = (props) => {
         return new Date(date).toLocaleDateString(undefined, options);
     };
 
-    // Logged in users
-    const [loggedInUser, setloggedInUser] = useState(() => {
-        const savedUsers = localStorage.getItem('LoggedInUser');
-        return savedUsers ? JSON.parse(savedUsers) : [];
-    });
 
     // Todos from local storage
     const [todos, setTodos] = useState(() => {

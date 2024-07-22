@@ -7,8 +7,9 @@ import AntModal from '../changePass'
 export default function Header() {
 
     const navigate = useNavigate()
+    
     const [LoggedInUser, setLoggedInUser] = useState(() => {
-        // Load users from local storage or set to an empty array if not available
+      
         const savedUsers = localStorage.getItem('LoggedInUser');
         return savedUsers ? JSON.parse(savedUsers) : [];
     });
@@ -18,11 +19,6 @@ export default function Header() {
         toast.success("Logout Successful!");
         navigate('/')
     }
-
-    // const changePass = () => {
-        
-    // }
-
 
     return (
         <div>
@@ -34,7 +30,6 @@ export default function Header() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-
                             <li className="nav-item"><Link to="/todo" className="nav-link" id='navLink'>Home</Link></li>
                             <li className="nav-item"><Link to="/Todo/todo" className="nav-link" id='navLink'>Todos</Link></li>
                             <li className="nav-item"><Link to="/Todo/users" className="nav-link" id='navLink'>Users</Link></li>

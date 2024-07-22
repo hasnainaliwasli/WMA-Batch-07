@@ -1,9 +1,8 @@
 import React from 'react'
 
+
 export default function footer() {
-
     let currentYear = new Date().getFullYear()
-
     return (
         <div>
             <nav className=" navbar-expand-lg custom-footer" style={{ backgroundColor: 'rgb(128,24,149)' }}>
