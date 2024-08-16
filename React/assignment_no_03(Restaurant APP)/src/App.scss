@@ -1,0 +1,74 @@
+@import "./scss/bootstrap";
+@import './scss/screen-loader';
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #1d3557;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.mainDiv {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#card {
+  background-image: url('./Assets/shefForm1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.headerFooter {
+  background-color: #3f5472;
+}
+
+// header
+.nav-link {
+  color: white;
+  font-weight: 700;
+
+}
+
+.nav-link:hover {
+  background-color: #781eff;
+  color: #fff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+}
+
+.nav-link:active,
+.nav-link:focus {
+  color: antiquewhite;
+}
+
+
+
+// Contact-Us Page
+#contactForm {
+  width: 44%;
+  
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    width: 80%;
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    width: 70%;
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    width: 60%
+  }
+}
